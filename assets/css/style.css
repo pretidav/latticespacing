@@ -1,13 +1,10 @@
 :root {
-  --ink: #1e1e1e;
-  --paper: #fefefe;
-  --muted: #6b6b6b;
+  --ink: #ececec;
+  --paper: #161616;
+  --muted: #9a9a9a;
   --accent: #f386a1;
   --accent2: #d45bb6;
-  --rule: #1e1e1e;
-}
-@media (prefers-color-scheme: dark) {
-  :root { --ink: #ececec; --paper: #161616; --muted: #9a9a9a; --rule: #ececec; }
+  --rule: #ececec;
 }
 * { box-sizing: border-box; }
 html { font-size: 17px; }
