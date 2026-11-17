@@ -1,0 +1,9 @@
+<ul class="posts">
+  {% for post in include.posts %}
+  <li>
+    <p class="tag">[{{ post.category | default: "note" }}] · {{ post.date | date: "%b %-d, %Y" }}</p>
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <p class="excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+  </li>
+  {% endfor %}
+</ul>
