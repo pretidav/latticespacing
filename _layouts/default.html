@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title and page.url != '/' %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip | truncate: 160 }}">
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; }
+    catch (e) { document.documentElement.dataset.theme = "dark"; }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=VT323&display=swap">
@@ -19,6 +23,7 @@
       <nav>
         <a href="{{ '/blog/' | relative_url }}">Thoughts</a>
         <a href="https://github.com/pretidav">GitHub</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">light</button>
       </nav>
     </header>
     <main>
@@ -30,5 +35,18 @@
       <span>Made with hate.</span>
     </footer>
   </div>
+  <script>
+    (function () {
+      var root = document.documentElement, btn = document.getElementById("theme-toggle");
+      function label() { btn.textContent = root.dataset.theme === "dark" ? "light" : "dark"; }
+      label();
+      btn.addEventListener("click", function () {
+        var next = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = next;
+        try { localStorage.setItem("theme", next); } catch (e) {}
+        label();
+      });
+    })();
+  </script>
 </body>
 </html>
