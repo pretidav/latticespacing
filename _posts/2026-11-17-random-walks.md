@@ -40,4 +40,4 @@ x = steps.sum(axis=1)
 print(x.var())  # close to n
 ```
 
-> Put a plot in `assets/img/2026-11-18-random-walks/` and include it with the figure helper.
+> Put a plot in `assets/img/2026-11-17-random-walks/` and include it with the figure helper.
