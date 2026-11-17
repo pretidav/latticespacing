@@ -1,0 +1,17 @@
+title: latticespacing
+description: Notes on physics, math and machine learning.
+author: David Preti
+url: "https://pretidav.github.io"
+baseurl: "/latticespacing"
+markdown: kramdown
+permalink: /blog/:title/
+plugins:
+  - jekyll-feed
+kramdown:
+  math_engine: nil
+  input: GFM
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
