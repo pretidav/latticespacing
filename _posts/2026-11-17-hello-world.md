@@ -19,3 +19,7 @@ And some code:
 import numpy as np
 spins = np.random.choice([-1, 1], size=(16, 16))
 ```
+
+And an image:
+
+{% include figure.html src="/assets/img/2026-11-17-hello-world/test.jpg" caption="Test image" %}

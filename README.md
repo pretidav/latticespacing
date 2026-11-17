@@ -1,21 +1,14 @@
 # latticespacing
 
-Personal blog, built with Jekyll and served by GitHub Pages. Math via KaTeX (`$inline$`, `$$display$$`).
+Personal blog.
 
-## New post
-Add `_posts/YYYY-MM-DD-title.md` with front matter:
+## Images
+Put each post's images in `assets/img/<post-file-name>/`, e.g. `assets/img/2026-11-17-hello-world/plot.png`. Then in the post:
 
-```yaml
----
-layout: post
-title: "My title"
-category: physics
----
+```liquid
+{% include figure.html src="/assets/img/2026-11-17-hello-world/plot.png" caption="Optional caption" %}
 ```
-
-## Preview locally
+or plain Markdown (the `relative_url` filter keeps the `/latticespacing` prefix working):
 ```
-bundle install
-bundle exec jekyll serve
+![alt text]({{ '/assets/img/2026-11-17-hello-world/plot.png' | relative_url }})
 ```
-Then open http://localhost:4000/latticespacing/ (the site lives under `baseurl: /latticespacing`).
