@@ -31,7 +31,7 @@ a:hover { background: var(--accent); color: #1e1e1e; text-decoration-style: soli
 @keyframes blink { 50% { opacity: 0; } }
 nav a { margin-left: 18px; font-size: .9rem; }
 main { padding: 36px 0 48px; min-height: 60vh; }
-.hero h1 { font-family: "VT323", monospace; font-weight: 400; font-size: 3rem; line-height: 1.05; margin: 8px 0; }
+.hero h1 { font-family: "VT323", monospace; font-weight: 400; font-size: min(2.6rem, calc((100vw - 32px) / 15)); line-height: 1.05; margin: 8px 0; white-space: nowrap; }
 .sub { color: var(--muted); margin-top: 0; }
 .tag { font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
 .section { font-family: "VT323", monospace; font-weight: 400; font-size: 1.8rem; border-bottom: 1px dashed var(--rule); padding-bottom: 4px; margin: 48px 0 16px; }
@@ -53,7 +53,7 @@ pre code { background: none; padding: 0; }
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
   border-top: 1px dashed var(--rule); padding: 16px 0 32px; font-size: .75rem; color: var(--muted);
 }
-@media (max-width: 520px) { html { font-size: 15px; } .hero h1 { font-size: 2.4rem; } }
+@media (max-width: 520px) { html { font-size: 15px; } }
 figure { margin: 1.5em 0; text-align: center; }
 figure img { border: 1px solid var(--rule); }
 figcaption { margin-top: 6px; font-size: .8rem; color: var(--muted); }
