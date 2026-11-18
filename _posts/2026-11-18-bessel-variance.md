@@ -41,7 +41,7 @@ $$\mathbb{E}[S_{n-1}^2] = \frac{n}{n-1}\,\mathbb{E}[S_n^2] = \sigma^2.$$
 
 >The bias is $-\sigma^2/n$, which is the variance of the sample mean. In other words, the missing piece is exactly the error we make by using $\bar X$ in place of $\mu$.
 
-{% include figure.html src="/assets/img/2026-11-20-bessel-variance/bias.png" caption="Mean of the two estimators against the sample size n, for a true variance σ² = 4. The 1/n estimator sits at (n−1)/n · σ², i.e. at 2 for n = 2, and approaches σ² only slowly." %}
+{% include figure.html src="/assets/img/2026-11-18-bessel-variance/bias.png" caption="Mean of the two estimators against the sample size n, for a true variance σ² = 4. The 1/n estimator sits at (n−1)/n · σ², i.e. at 2 for n = 2, and approaches σ² only slowly." %}
 
 The plot comes from a simple Monte Carlo experiment: for each $n \in \{2, 3, 5, 10, 30, 100, 1000\}$ I draw $200000$ independent samples of size $n$ from $\mathcal{N}(0, \sigma^2)$ with $\sigma = 2$, compute both estimators on each sample, and average over the samples. The plot agrees with the formula. At $n = 2$ the biased estimator averages $\frac{1}{2}\sigma^2$, which is half of the truth, while $S_{n-1}^2$ is on the line for every $n$. Both estimators agree for large $n$, since the factor $\frac{n}{n-1} \to 1$.
 
