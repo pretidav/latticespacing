@@ -55,4 +55,4 @@ Some remarks:
 
 Cheers.
 
-{% include figure.html src="/assets/img/2026-11-18-random-loss/face.jpg"%}
+{% include figure.html src="/assets/img/2026-11-18-random-loss/face.png"%}
