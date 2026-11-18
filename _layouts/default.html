@@ -22,7 +22,7 @@
       <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}<span class="cursor">_</span></a>
       <nav>
         <a href="{{ '/blog/' | relative_url }}">Thoughts</a>
-        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">light</button>
       </nav>
     </header>
@@ -33,6 +33,7 @@
       <span>Version 0.01</span>
       <span>&copy;{{ site.time | date: "%Y" }} {{ site.author }}</span>
       <span>Made with hate.</span>
+      <a href="{{ '/feed.xml' | relative_url }}">[rss]</a>
     </footer>
   </div>
   <script>
