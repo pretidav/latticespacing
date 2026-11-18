@@ -7,5 +7,18 @@ layout: default
   <div class="post">
     {{ content }}
   </div>
+  <details class="cite">
+    <summary>cite this post</summary>
+<pre id="bibtex"><code>@misc{preti{{ page.date | date: "%Y" }}{{ page.slug | replace: "-", "" }},
+  author       = {Preti, David},
+  title        = {{ "{" }}{{ page.title | escape }}{{ "}" }},
+  year         = {{ "{" }}{{ page.date | date: "%Y" }}{{ "}" }},
+  month        = {{ page.date | date: "%b" | downcase }},
+  howpublished = {\url{{ "{" }}{{ page.url | absolute_url }}{{ "}" }}},
+  url          = {{ "{" }}{{ page.url | absolute_url }}{{ "}" }},
+  note         = {{ "{" }}{{ site.title }}{{ "}" }}
+}</code></pre>
+    <button type="button" class="copy-bib" onclick="navigator.clipboard.writeText(document.getElementById('bibtex').innerText).then(function(){this.textContent='copied'}.bind(this))">copy</button>
+  </details>
   <p class="back"><a href="{{ '/blog/' | relative_url }}">&larr; all thoughts</a></p>
 </article>
