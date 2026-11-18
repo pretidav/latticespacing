@@ -7,6 +7,7 @@ markdown: kramdown
 permalink: /blog/:title/
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 kramdown:
   math_engine: nil
   input: GFM

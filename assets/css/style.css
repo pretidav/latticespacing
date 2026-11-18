@@ -67,3 +67,6 @@ figcaption { margin-top: 6px; font-size: .8rem; color: var(--muted); }
 .cite summary { cursor: pointer; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; font-size: .75rem; }
 .cite pre { margin: 10px 0 8px; }
 .copy-bib { font: inherit; font-size: .75rem; cursor: pointer; background: none; color: inherit; border: 1px solid var(--rule); padding: 2px 10px; }
+.about { max-width: 60ch; }
+.post-actions { margin: 40px 0 0; }
+.post-actions + .cite { margin-top: 16px; }
