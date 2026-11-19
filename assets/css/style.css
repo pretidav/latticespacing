@@ -72,3 +72,9 @@ figcaption { margin-top: 6px; font-size: .8rem; color: var(--muted); }
 .post-actions + .cite { margin-top: 16px; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: #1e1e1e; }
+.post table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: .78rem; line-height: 1.45; }
+.post th, .post td { border: 1px dashed var(--rule); padding: 6px 8px; text-align: left; vertical-align: top; }
+.post th { font-weight: 600; text-transform: uppercase; letter-spacing: .03em; font-size: .7rem; }
+.post td .katex { font-size: 1em; }
+@media (max-width: 600px) { .post table { display: block; overflow-x: auto; } }
+@media (max-width: 600px) { .katex-display { font-size: .9em; } }

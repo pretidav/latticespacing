@@ -6,7 +6,13 @@ category: stat
 > You are told to estimate the variance by dividing by $n-1$ instead of $n$. The usual justification is a hand-wave about "losing a degree of freedom". Let me try to formalize it.
 
 Let $X_1, \dots, X_n$ be iid random variables with unknown mean $\mu$ and variance $\sigma^2$. Define the sample mean and the two candidate estimators of the variance
-$$\bar X = \frac{1}{n} \sum_{i=1}^{n} X_i, \qquad S_n^2 = \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar X)^2, \qquad S_{n-1}^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar X)^2.$$
+$$
+\begin{aligned}
+\bar X &= \frac{1}{n} \sum_{i=1}^{n} X_i, \\
+S_n^2 &= \frac{1}{n} \sum_{i=1}^{n} (X_i - \bar X)^2, \\
+S_{n-1}^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar X)^2.
+\end{aligned}
+$$
 
 **Assumptions.** Only $\mathbb{E}[X_i] = \mu$, $\mathrm{Var}(X_i) = \sigma^2 < \infty$ and independence (uncorrelated is enough). No Gaussianity is needed. In what follows, $\mathbb{E}$ denotes the expectation over the random sample.
 
