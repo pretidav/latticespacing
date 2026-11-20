@@ -192,26 +192,25 @@ The implementation is in [GrowingNeuralGas](https://github.com/pretidav/GrowingN
 
 First, a ring. The distribution is one-dimensional, so the network must discover a closed chain of units: no triangles, and no gaps. In the last picture it has $132$ units and $132$ edges in a single connected component, which is exactly a closed loop. Note how the first units, in the first picture, sit inside the circle.
 
-<div class="fig-row">
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/circle_500.png" caption="500 signals, 7 units." %}
+
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/circle_3000.png" caption="3000 signals, 32 units." %}
+
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/circle_13000.png" caption="13000 signals, 132 units." %}
-</div>
 
 The same network on a uniform rectangle $[0,2] \times [0,4]$ has to do something very different. The edges now form a two-dimensional triangulation. This is the point of the paper: the dimension of the structure is not chosen in advance, it is whatever the support of $P$ has.
 
-<div class="fig-row">
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/box2d_500.png" caption="500 signals, 7 units." %}
+
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/box2d_5000.png" caption="5000 signals, 52 units." %}
+
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/box2d_30500.png" caption="30500 signals, 307 units." %}
-</div>
 
 The input space does not have to be the plane. On the closed curve $(\cos t, \sin t, \cos 3t)$ the network finds a one-dimensional chain in $\mathbb{R}^3$ (in this run it has $191$ units and $192$ edges: a loop plus one extra edge), and on the paraboloid patch $(x, y, x^2 + y^2)$ with $x, y \in [3, 13]$ it finds a two-dimensional net.
 
-<div class="fig-row">
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/tilted_19000.png" caption="A closed curve in 3D, 19000 signals, 191 units." %}
+
 {% include figure.html src="/assets/img/2026-11-20-growing-neural-gas/hyppar_27500.png" caption="A paraboloid patch, 27500 signals, 277 units." %}
-</div>
 
 The unit counts follow the growth law. With $\lambda = 100$ (the value used for all the pictures), $N(t) = 2 + \lfloor t/100 \rfloor$ gives $7, 32, 132$ for the ring, $7, 52, 307$ for the rectangle and $277$ for the paraboloid, exactly as in the titles. The closed curve shows $191$ instead of $192$: one unit was removed in step 7, so $R = 1$.
 
@@ -239,10 +238,6 @@ Some remarks:
 >The edge test is local and needs no global bookkeeping, which is why GNG can keep running after the first topology is found. An edge that the data no longer supports dies after $a_{\max} + 1$ endpoint-wins of its ends.
 
 >The inserted unit sits halfway between two units, which in general is *not* on the data manifold: on the ring it is inside the circle, as the first picture shows, and the first updates pull it onto the data. The paper suspects that this interpolation is what allows constant parameters, since a new unit starts close to where it is needed.
-
->The distributions in `example/distributions.py` draw a finite point cloud once and then resample it uniformly, so $P$ is an empirical measure and not a density. The derivation of the drift still holds, with the integrals replaced by sums over the points. The edge test, however, feels the finiteness: an edge needs $\rho_{cc'} > 0$, that is, at least one data point whose two closest units are $c$ and $c'$. Once the units are denser than the points, some neighbouring pairs have none and their edge dies. On the ring with $1000$ points, three of four runs of $30000$ signals ended with a ring cut in arcs, while with $100000$ points all four runs ended with one closed ring.
-
->I checked the formulas numerically. The gradient of $\mathcal{E}$ agrees with finite differences to four digits, and the mean drift with a simulation of steps 2 and 5. For frozen units, the time average of $E_c / D_c$ is between $196.7$ and $199.0$, against the predicted $199$. And the probability of removal before the next refresh, measured by simulating steps 3, 6 and 7, is $0.0186, 0.0074, 0.0017$ for $\rho = 0.076, 0.093, 0.117$, against $(1-\rho)^{51} = 0.0178, 0.0069, 0.0017$.
 
 Cheers.
 
