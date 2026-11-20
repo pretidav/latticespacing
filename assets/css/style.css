@@ -78,3 +78,9 @@ figcaption { margin-top: 6px; font-size: .8rem; color: var(--muted); }
 .post td .katex { font-size: 1em; }
 @media (max-width: 600px) { .post table { display: block; overflow-x: auto; } }
 @media (max-width: 600px) { .katex-display { font-size: .9em; } }
+.fig-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 1.5em 0; }
+.fig-row figure { margin: 0; }
+.fig-row figure img { width: 100%; height: auto; }
+.fig-row figcaption { font-size: .7rem; }
+@media (max-width: 600px) { .fig-row { grid-template-columns: 1fr; } }
+.post a { overflow-wrap: anywhere; }
