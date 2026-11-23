@@ -8,3 +8,6 @@ images_sources.dav
 bessel/bias.py
 bessel/bias.png
 GrowingNeuralGas/
+traffic/
+.claude/
+.vscode/
