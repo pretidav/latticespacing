@@ -12,3 +12,5 @@ traffic/
 .vscode/
 pso/
 PSOkeras/
+plot_style/
+hopfield/
